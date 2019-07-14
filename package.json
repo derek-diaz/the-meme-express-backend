@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./src",
-    "server": "babel-node ./src/app.js",
+    "server": "babel-node ./src/app.js --inspect",
     "dev": "NODE_ENV=development npm-run-all server",
     "watch": "nodemon"
   },
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/derek-diaz/the-meme-express-backend#readme",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "express": "^4.17.1",

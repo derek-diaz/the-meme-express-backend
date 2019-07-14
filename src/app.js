@@ -19,6 +19,9 @@ mongoose.connection.on('error', console.error.bind(console, 'connection error:')
 app.use( bodyParser.urlencoded({ extended : false }) );
 app.use(logger('dev'));
 
+//Setup Secret key.....in plain text...
+app.set('secretKey', 'sadSuperSecretKey');
+
 //Setup Routes
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/giphy', validation,giphyRoutes);
@@ -37,7 +40,7 @@ function validation(req, res, next) {
       res.json({status:"error", message: err.message, data:null});
     }else{
       // add user id to request
-      req.body.userId = decoded.id;
+      req.body.user_id = decoded.id;
       next();
     }
   }); 

@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
 let giphySchema = new mongoose.Schema({
-    email: {
+    user_id: {
       type: String,
       required: true,
       trim: true
     },
-    gif_id: {
+    giphy_id: {
       type: String,
       required: true
     },

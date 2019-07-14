@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
-import { saltRounds } from '../constants';
+import { SALT_ROUNDS } from '../constants';
 
 //TODO: needs more fields!
 let userSchema = new mongoose.Schema({
@@ -22,7 +22,7 @@ let userSchema = new mongoose.Schema({
   });
 
   userSchema.pre('save', function(next){
-    this.password = bcrypt.hashSync(this.password, saltRounds);
+    this.password = bcrypt.hashSync(this.password, SALT_ROUNDS);
     next();
   });
 
