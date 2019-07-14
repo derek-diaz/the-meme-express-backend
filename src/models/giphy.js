@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import userRouter from "../routes/user";
 
 let giphySchema = new mongoose.Schema({
     user_id: {
@@ -16,4 +17,4 @@ let giphySchema = new mongoose.Schema({
     }
   });
 
-module.exports = mongoose.model('Giphy', giphySchema);
+export default mongoose.model('Giphy', giphySchema);

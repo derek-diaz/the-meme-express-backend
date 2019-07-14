@@ -6,7 +6,6 @@ import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import {PORT} from './constants'
 
-
 //Routing Import
 import userRoutes from './routes/user';
 import giphyRoutes from './routes/giphy';

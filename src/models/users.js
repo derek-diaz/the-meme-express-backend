@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import { SALT_ROUNDS } from '../constants';
+import userRouter from "../routes/user";
 
 //TODO: needs more fields!
 let userSchema = new mongoose.Schema({
@@ -26,7 +27,7 @@ let userSchema = new mongoose.Schema({
     next();
   });
 
-  module.exports = mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema);
 
 
   
