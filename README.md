@@ -33,6 +33,8 @@ This application requires mongoDB Atlas to work. Your current IP address needs t
 
 ## API Documentation
 
+[Postman Documentation](https://documenter.getpostman.com/view/4118863/SVSLrUR6)
+
 ### Create User
 
   Creates a new user.
