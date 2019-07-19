@@ -31,9 +31,9 @@ Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 ## Dependencies
 This application requires mongoDB Atlas to work. Your current IP address needs to be added to mongoDB Atlas in order to be able to access the DB. This application works better together with its front end. For more info on this, be sure to check out the following project: [the-meme-express-frontend](https://github.com/derek-diaz/the-meme-express-frontend)
 
-##API Documentation
+## API Documentation
 
-###Create User
+### Create User
 
   Creates a new user.
 
@@ -65,7 +65,7 @@ This application requires mongoDB Atlas to work. Your current IP address needs t
                       "message": "User added successfully!!!",
                       "data": null
                   }`
- ###Login User
+### Login User
 
   Login the user to the system.
 
@@ -103,7 +103,7 @@ This application requires mongoDB Atlas to work. Your current IP address needs t
         }
     ```    
 
-###Add Favorite Giphy
+### Add Favorite Giphy
 
   This will add a Giphy to the user's profile.
 
@@ -138,7 +138,7 @@ This application requires mongoDB Atlas to work. Your current IP address needs t
        }
     ``` 
     
- ###Get the list of favorite Giphys
+### Get the list of favorite Giphys
 
   This will send back a list of giphys from the requested user.
 
@@ -185,7 +185,7 @@ This application requires mongoDB Atlas to work. Your current IP address needs t
       }
     ```    
     
-###Update the category of a single favorite Giphys
+### Update the category of a single favorite Giphys
 
   This will update the category of a single saved favorite Giphy to the user's profile.
 
@@ -220,7 +220,7 @@ This application requires mongoDB Atlas to work. Your current IP address needs t
      }
     ```   
     
-###Delete a single favorite Giphy
+### Delete a single favorite Giphy
 
   This will delete a single saved favorite Giphy from the user's profile.
 
