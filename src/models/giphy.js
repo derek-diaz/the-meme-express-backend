@@ -1,6 +1,13 @@
+/**
+ * Giphy - Model
+ *
+ * @file   giphy.js
+ * @author Derek Diaz Correa
+ * @since  7.17.2019
+ */
 import mongoose from 'mongoose';
-import userRouter from "../routes/user";
 
+//Defining Giphy Schema
 let giphySchema = new mongoose.Schema({
     user_id: {
         type: String,

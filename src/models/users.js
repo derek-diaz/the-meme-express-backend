@@ -1,9 +1,15 @@
+/**
+ * Users - Model
+ *
+ * @file   users.js
+ * @author Derek Diaz Correa
+ * @since  7.17.2019
+ */
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import {SALT_ROUNDS} from '../constants';
-import userRouter from "../routes/user";
 
-//TODO: needs more fields!
+//Defining Giphy Schema
 let userSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -22,6 +28,7 @@ let userSchema = new mongoose.Schema({
     }
 });
 
+//Hook that runs every time we try so save a new user into MongoDB
 userSchema.pre('save', function (next) {
     this.password = bcrypt.hashSync(this.password, SALT_ROUNDS);
     next();

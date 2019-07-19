@@ -1,10 +1,23 @@
+/**
+ * Users - Controller
+ *
+ * @file   users.js
+ * @author Derek Diaz Correa
+ * @since  7.17.2019
+ */
 import userModel from '../models/users';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import _ from 'lodash';
 
-let _ = require('lodash');
-
+/**
+ * Create a new user
+ * @param req - Service Request
+ * @param res - Service Response
+ * @param next - Node Control Flow Callback
+ */
 function create(req, res, next) {
+    //Lets make sure the payload is valid
     if (_.isNil(req.body.email) || _.isNil(req.body.password)|| _.isNil(req.body.name)) {
         next("Invalid payload");
     } else {
@@ -24,11 +37,14 @@ function create(req, res, next) {
     }
 }
 
+/**
+ * Authenticate User
+ * @param req - Service Request
+ * @param res - Service Response
+ * @param next - Node Control Flow Callback
+ */
 function authenticate(req, res, next) {
-    console.log("email", req.body.email);
-    console.log("password", req.body.password);
-    console.log("body", req.body);
-
+    //Lets make sure the payload is valid
     if (_.isNil(req.body.email) || _.isNil(req.body.password)) {
         next("Invalid payload");
     } else {
@@ -36,6 +52,7 @@ function authenticate(req, res, next) {
             if (err || _.isNil(userInfo)) {
                 next(err);
             } else {
+                //Checking is the password hash matches
                 if (bcrypt.compareSync(req.body.password, userInfo.password)) {
                     const token = jwt.sign({id: userInfo._id}, req.app.get('secretKey'), {expiresIn: '1h'});
                     res.json({
